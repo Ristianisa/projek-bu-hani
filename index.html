@@ -1,0 +1,1052 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMA HIFSI TUNAS BANGSA</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f6f9;
+    color: #263445;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    background: #174a7e;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+
+.logo h2 {
+    color: #174a7e;
+    font-size: 19px;
+}
+
+.login {
+    background: #f3b544;
+    color: #222;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+/* NAVIGASI */
+nav {
+    background: #174a7e;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #f3b544;
+}
+
+section {
+    padding: 45px 7%;
+    scroll-margin-top: 20px;
+}
+
+.judul {
+    text-align: center;
+    color: #174a7e;
+    margin-bottom: 25px;
+}
+
+/* BANNER SLIDER */
+.slider {
+    height: 330px;
+    background: #174a7e;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.slider .slide-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.slider::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#174a7e99, #174a7e99);
+    z-index: 1;
+}
+
+.slider .slide-content,
+.slider .arrow,
+.slider .slide-dots {
+    z-index: 2;
+}
+
+.slider h1 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.slider button {
+    background: #f3b544;
+    border: none;
+    padding: 10px 18px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.arrow {
+    position: absolute;
+    top: 45%;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.left {
+    left: 20px;
+}
+
+.right {
+    right: 20px;
+}
+
+.slide-dots {
+    position: absolute;
+    bottom: 15px;
+    display: flex;
+    gap: 8px;
+}
+
+.slide-dots button {
+    width: 11px;
+    height: 11px;
+    padding: 0;
+    margin: 0;
+    border-radius: 50%;
+    background: #ffffff99;
+}
+
+.slide-dots button.active {
+    background: #f3b544;
+}
+
+.upload-banner {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: white;
+    color: #174a7e;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.upload-banner input {
+    display: none;
+}
+
+/* LOKASI SEKOLAH */
+.lokasi {
+    background: white;
+    text-align: center;
+}
+
+.lokasi-info {
+    max-width: 750px;
+    margin: auto;
+    padding: 22px;
+    background: #eaf3fb;
+    border-radius: 10px;
+}
+
+.lokasi-info a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #174a7e;
+    font-weight: bold;
+}
+
+/* SAMBUTAN KEPALA SEKOLAH */
+.sambutan {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.sambutan img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* KARTU BERITA */
+.kartu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #00000015;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.card h3 {
+    color: #174a7e;
+    margin: 10px 0;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+/* KEGIATAN MENDATANG */
+.kegiatan {
+    background: #eaf3fb;
+}
+
+.kegiatan-item {
+    background: white;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 7px;
+}
+
+/* PROFIL SEKOLAH */
+.profil {
+    background: white;
+}
+
+.visi-misi {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.kotak {
+    padding: 20px;
+    background: #eaf3fb;
+    border-radius: 8px;
+}
+
+/* STRUKTUR ORGANISASI */
+.organisasi {
+    text-align: center;
+    margin-top: 35px;
+}
+
+.organisasi h3 {
+    color: #174a7e;
+    margin-bottom: 25px;
+}
+
+.bagan {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.org-box {
+    background: #eaf3fb;
+    color: #174a7e;
+    border: 2px solid #174a7e;
+    padding: 15px;
+    border-radius: 8px;
+    width: 220px;
+    margin: 5px;
+}
+
+.org-box.utama {
+    background: #174a7e;
+    color: white;
+}
+
+.org-box h4 {
+    margin-bottom: 5px;
+}
+
+.org-box p {
+    font-size: 13px;
+}
+
+.garis {
+    width: 2px;
+    height: 25px;
+    background: #174a7e;
+}
+
+.org-cabang {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.org-cabang .org-box {
+    width: 190px;
+}
+
+/* AKADEMIK */
+.akademik {
+    background: #eaf3fb;
+}
+
+.guru {
+    text-align: center;
+}
+
+.guru img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* PPDB */
+.ppdb {
+    background: white;
+}
+
+.alur {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.alur-box {
+    background: #eaf3fb;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.formulir {
+    max-width: 500px;
+    margin: auto;
+    padding: 25px;
+    background: #f4f6f9;
+    border-radius: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formulir button {
+    background: #174a7e;
+    color: white;
+    padding: 12px;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* PORTAL AKADEMIK */
+.portal {
+    background: #eaf3fb;
+}
+
+.portal .card {
+    text-align: center;
+}
+
+/* FOOTER */
+footer {
+    background: #102f50;
+    color: white;
+    padding: 30px 7%;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer p {
+    margin-top: 8px;
+}
+
+.copy {
+    text-align: center;
+    margin-top: 25px;
+    border-top: 1px solid #ffffff33;
+    padding-top: 15px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 700px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 7px;
+    }
+
+    .sambutan {
+        flex-direction: column;
+    }
+
+    .kartu,
+    .visi-misi,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .slider h1 {
+        font-size: 25px;
+    }
+
+    .org-cabang {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="logo">
+        <div class="logo-icon">SMA</div>
+        <div>
+            <h2>SMA HIFSI TUNAS BANGSA</h2>
+            <small>PELAJAR CERDAS DAN KREATIF</small>
+        </div>
+    </div>
+
+    <a href="#portal" class="login">Login Portal</a>
+</header>
+
+<!-- NAVIGASI -->
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#profil">Profil</a>
+    <a href="#akademik">Akademik</a>
+    <a href="#kesiswaan">Kesiswaan</a>
+    <a href="#ppdb">PPDB</a>
+    <a href="#berita">Berita</a>
+    <a href="#lokasi">Lokasi</a>
+    <a href="#kontak">Kontak</a>
+</nav>
+
+<!-- BANNER UTAMA -->
+<section class="slider" id="beranda">
+
+    <img class="slide-image" id="gambarSlide"
+    src="https://images.unsplash.com/photo-1562774053-701939374585?w=1200"
+    alt="Banner sekolah">
+
+    <span class="arrow left"
+    onclick="gantiSlide(-1)">❮</span>
+
+    <div class="slide-content">
+        <h1 id="judulSlide">Prestasi Siswa</h1>
+
+        <p id="isiSlide">
+            Selamat datang di SMA HIFSI TUNAS BANGSA
+        </p>
+
+        <button onclick="location.href='#profil'">
+            Selengkapnya
+        </button>
+
+        <br>
+
+        <label class="upload-banner">
+            Ganti gambar banner
+            <input type="file"
+            id="pilihGambarBanner"
+            accept="image/*">
+        </label>
+    </div>
+
+    <span class="arrow right"
+    onclick="gantiSlide(1)">❯</span>
+
+    <div class="slide-dots" id="titikSlide"></div>
+
+</section>
+
+<!-- SAMBUTAN KEPALA SEKOLAH -->
+<section>
+    <h2 class="judul">Sambutan Kepala Sekolah</h2>
+
+    <div class="sambutan">
+
+        <img src="chooooiiiiii.jfif"
+        alt="Kepala sekolah">
+
+        <div>
+            <h3>Drs. choi hyun wook</h3>
+
+            <p>
+                Selamat datang di website resmi
+                SMA HIFSI TUNAS BANGSA.
+                Kami berkomitmen memberikan
+                pendidikan terbaik untuk menciptakan
+                generasi yang cerdas, berkarakter,
+                dan berprestasi.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- BERITA TERBARU -->
+<section id="berita">
+    <h2 class="judul">Berita Terbaru</h2>
+
+    <div class="kartu">
+
+        <div class="card">
+            <img src="pelajar.jfif" alt="Kegiatan sekolah">
+            <h3>Kegiatan Sekolah</h3>
+            <p>Informasi kegiatan terbaru di sekolah.</p>
+        </div>
+
+        <div class="card">
+            <img src="prestasi.jfif" alt="Prestasi siswa">
+            <h3>Prestasi Siswa</h3>
+            <p>Prestasi membanggakan dari siswa.</p>
+        </div>
+
+        <div class="card">
+            <img src="labor.jpeg" alt="Pendidikan">
+            <h3>Informasi Pendidikan</h3>
+            <p>Berita dan informasi pendidikan terbaru.</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- KEGIATAN MENDATANG -->
+<section class="kegiatan">
+
+    <h2 class="judul">Kegiatan Mendatang</h2>
+
+    <div class="kegiatan-item">
+        ⚽ <b>Ekstrakurikuler</b>
+        <p>Latihan kegiatan ekstrakurikuler siswa.</p>
+    </div>
+
+    <div class="kegiatan-item">
+        🎖️ <b>Kegiatan OSIS</b>
+        <p>Program kegiatan organisasi siswa.</p>
+    </div>
+
+    <div class="kegiatan-item">
+        🏆 <b>Prestasi Siswa</b>
+        <p>Pengembangan bakat dan minat siswa.</p>
+    </div>
+
+    <p>Tautan Penting: Kalender | OSIS | Alamat & Kontak</p>
+
+</section>
+
+<!-- HALAMAN PROFIL -->
+<section class="profil" id="profil">
+
+    <h2 class="judul">Halaman Profil</h2>
+
+    <div class="visi-misi">
+
+        <div class="kotak">
+            <h3>Visi</h3>
+            <p>
+                Menjadi sekolah unggul dalam prestasi,
+                berkarakter, dan berwawasan luas.
+            </p>
+        </div>
+
+        <div class="kotak">
+            <h3>Misi</h3>
+            <p>
+                1. Meningkatkan kualitas pendidikan.<br>
+                2. Mengembangkan kreativitas siswa.<br>
+                3. Membentuk karakter yang baik.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- STRUKTUR ORGANISASI -->
+    <div class="organisasi">
+
+        <h3>STRUKTUR ORGANISASI SEKOLAH</h3>
+
+        <div class="bagan">
+
+            <div class="org-box utama">
+                <h4>Kepala Sekolah</h4>
+                <p>Drs. choi hyun wook</p>
+            </div>
+
+            <div class="garis"></div>
+
+            <div class="org-box">
+                <h4>Wakil Kepala Sekolah</h4>
+                <p>Ibu Siti Aminah, S.Pd.</p>
+            </div>
+
+            <div class="garis"></div>
+
+            <div class="org-cabang">
+
+                <div class="org-box">
+                    <h4>Bidang Kurikulum</h4>
+                    <p>Bapak arya, S.Pd.</p>
+                </div>
+
+                <div class="org-box">
+                    <h4>Bidang Kesiswaan</h4>
+                    <p>Ibu wulan, S.Pd.</p>
+                </div>
+
+                <div class="org-box">
+                    <h4>Bidang Humas</h4>
+                    <p>Bapak dulah, S.Pd.</p>
+                </div>
+
+            </div>
+
+            <div class="garis"></div>
+
+            <div class="org-cabang">
+
+                <div class="org-box">
+                    <h4>Guru Mata Pelajaran</h4>
+                    <p>Tenaga Pendidik</p>
+                </div>
+
+                <div class="org-box">
+                    <h4>Wali Kelas</h4>
+                    <p>Pembimbing Siswa</p>
+                </div>
+
+                <div class="org-box">
+                    <h4>Tata Usaha</h4>
+                    <p>Administrasi Sekolah</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<!-- HALAMAN AKADEMIK -->
+<section class="akademik" id="akademik">
+
+    <h2 class="judul">Halaman Akademik</h2>
+
+    <div class="card">
+        <h3>Kurikulum</h3>
+        <p>
+            Kurikulum sekolah untuk mendukung
+            proses pembelajaran siswa.
+        </p>
+    </div>
+
+    <br>
+
+    <h3 class="judul">Daftar Guru</h3>
+
+    <div class="kartu">
+
+        <div class="card guru">
+            <img src="jiso.jfif" alt="Guru 1">
+            <h3>Guru 1</h3>
+        </div>
+
+        <div class="card guru">
+            <img src="jude.jfif" alt="Guru 2">
+            <h3>Guru 2</h3>
+        </div>
+
+        <div class="card guru">
+            <img src="lin yi BG biru.jfif" alt="Guru 3">
+            <h3>Guru 3</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HALAMAN KESISWAAN -->
+<section id="kesiswaan">
+
+    <h2 class="judul">Halaman Kesiswaan</h2>
+
+    <div class="card">
+
+        <h3>Alur Pendaftaran</h3>
+
+        <div class="alur">
+
+            <div class="alur-box">
+                ①<br>Pendaftaran
+            </div>
+
+            <div class="alur-box">
+                ②<br>Verifikasi
+            </div>
+
+            <div class="alur-box">
+                ③<br>Pengumuman
+            </div>
+
+        </div>
+
+        <h3>Persyaratan PDF</h3>
+
+        <p>📄 Dokumen persyaratan pendaftaran siswa baru.</p>
+
+        <p><a href="#ppdb">Lihat informasi PPDB</a></p>
+
+    </div>
+
+</section>
+
+<!-- FORMULIR PPDB -->
+<section class="ppdb" id="ppdb">
+
+    <h2 class="judul">Formulir Online PPDB</h2>
+
+    <div class="formulir">
+
+        <form id="formPPDB">
+
+            <label>Nama Lengkap</label>
+            <input type="text"
+            placeholder="Masukkan nama" required>
+
+            <label>Email</label>
+            <input type="email"
+            placeholder="Masukkan email" required>
+
+            <label>Alamat</label>
+            <textarea placeholder="Masukkan alamat"></textarea>
+
+            <button type="submit">Submit</button>
+
+            <p id="pesan"></p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- PORTAL AKADEMIK -->
+<section class="portal" id="portal">
+
+    <h2 class="judul">Portal Akademik</h2>
+
+    <div class="kartu">
+
+        <div class="card">
+            <h3>Jadwal Pelajaran</h3>
+            <p>Informasi jadwal pelajaran siswa.</p>
+        </div>
+
+        <div class="card">
+            <h3>Nilai Rapor</h3>
+            <p>Informasi nilai hasil belajar siswa.</p>
+        </div>
+
+        <div class="card">
+            <h3>Absensi</h3>
+            <p>Informasi kehadiran siswa.</p>
+        </div>
+
+    </div>
+
+    <br>
+
+    <div class="card">
+        <h3>Pengumuman Guru</h3>
+        <p>Informasi pengumuman untuk seluruh siswa.</p>
+    </div>
+
+</section>
+
+<!-- LOKASI SEKOLAH -->
+<section class="lokasi" id="lokasi">
+
+    <h2 class="judul">Lokasi Sekolah</h2>
+
+    <div class="lokasi-info">
+
+        <h3>SMA HIFSI TUNAS BANGSA</h3>
+
+        <p>Jl. Pendidikan No. 10</p>
+
+        <p>
+            Sesuaikan alamat dan tautan peta
+            dengan lokasi sekolah yang sebenarnya.
+        </p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Jl.+Pendidikan+No.+10"
+        target="_blank" rel="noopener">
+            Lihat lokasi di Google Maps
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="kontak">
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>SMA NEGERI NUSANTARA</h3>
+            <p>Sekolah unggul dan berprestasi.</p>
+        </div>
+
+        <div>
+            <h3>Tautan Penting</h3>
+            <p><a href="#profil">Profil Sekolah</a></p>
+            <p><a href="#akademik">Akademik</a></p>
+            <p><a href="#ppdb">PPDB</a></p>
+            <p><a href="#lokasi">Lokasi Sekolah</a></p>
+        </div>
+
+        <div>
+            <h3>Alamat & Kontak</h3>
+            <p>Jl. Pendidikan No. 10</p>
+            <p>Email: info@smanusantara.sch.id</p>
+            <p>Telepon: (000) 123456</p>
+        </div>
+
+    </div>
+
+    <div class="copy">
+        © 2026 SMA Negeri Nusantara
+    </div>
+
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+// DATA BANNER
+const daftarSlide = [
+
+    {
+        judul: "Prestasi Siswa",
+        isi: "Selamat datang di SMA HIFSI TUNAS BANGSA",
+        gambar: "sihif.jpeg"
+    },
+
+    {
+        judul: "Fasilitas Sekolah",
+        isi: "Fasilitas lengkap untuk mendukung pembelajaran",
+        gambar: "banner.jpeg"
+    },
+
+    {
+        judul: "Kegiatan Sekolah",
+        isi: "Belajar, berkarya, dan meraih prestasi bersama",
+        gambar: "sihif.jpeg"
+    }
+
+];
+
+let slide = 0;
+
+// MENAMPILKAN BANNER
+function tampilkanSlide() {
+
+    const data = daftarSlide[slide];
+
+    document.getElementById("judulSlide").innerText =
+    data.judul;
+
+    document.getElementById("isiSlide").innerText =
+    data.isi;
+
+    document.getElementById("gambarSlide").src =
+    data.gambar;
+
+    const wadahTitik =
+    document.getElementById("titikSlide");
+
+    wadahTitik.innerHTML = "";
+
+    daftarSlide.forEach((item, index) => {
+
+        const titik = document.createElement("button");
+
+        titik.type = "button";
+
+        titik.setAttribute(
+            "aria-label",
+            "Buka banner " + (index + 1)
+        );
+
+        if (index === slide) {
+            titik.classList.add("active");
+        }
+
+        titik.addEventListener("click", () => {
+
+            slide = index;
+            tampilkanSlide();
+
+        });
+
+        wadahTitik.appendChild(titik);
+
+    });
+
+}
+
+// MENGGESER BANNER
+function gantiSlide(arah) {
+
+    slide = (slide + arah + daftarSlide.length)
+    % daftarSlide.length;
+
+    tampilkanSlide();
+
+}
+
+// MENGGANTI GAMBAR BANNER DARI KOMPUTER
+document.getElementById("pilihGambarBanner")
+.addEventListener("change", function(event) {
+
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+
+        alert("Silakan pilih file gambar.");
+
+        return;
+
+    }
+
+    daftarSlide[slide].gambar =
+    URL.createObjectURL(file);
+
+    tampilkanSlide();
+
+});
+
+// MENGGESER BANNER DENGAN KEYBOARD
+document.querySelector(".slider")
+.setAttribute("tabindex", "0");
+
+document.querySelector(".slider")
+.addEventListener("keydown", function(event) {
+
+    if (event.key === "ArrowLeft") {
+        gantiSlide(-1);
+    }
+
+    if (event.key === "ArrowRight") {
+        gantiSlide(1);
+    }
+
+});
+
+// MENAMPILKAN SLIDE PERTAMA
+tampilkanSlide();
+
+
+// FORMULIR PPDB
+document.getElementById("formPPDB")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    document.getElementById("pesan").innerText =
+    "Pendaftaran berhasil diisi!";
+
+    this.reset();
+
+});
+
+</script>
+
+</body>
+</html>
